@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="60">
+        <link rel="stylesheet" href="main.css" type="text/css"/>
+        <style>
+        div.gallery {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 180px;
+            }
+        div.gallery:hover{
+            border: 1px solid #777;
+            }
+       div.gallery img{
+            width: 100%;
+            height: auto;
+            }
+       div.desc {
+            padding: 15px;
+            text-align: center;
+            } 
+        </style>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+            <a href="index.html"><img src="Pictures/circle logo.png" alt="Church logo" width="120"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>                    
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li>
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+            </nav>  
+            <h1 
+          style="color: white"
+          align="center">Our Work</h1>
+        </section>
+        <section class="welcome">
+
+        <p align="center">
+        We at Haven To Rest Ministry are on a mission to spread love and help 
+        <a href="Contact Us.html" target="_self" title="our location" style="color: darkslategray">
+        the community our church is in</a>, we accomplish these feats by doing bread runs, food runs
+        and even travelling to Lesotho, to spread the word of God and bless those that
+        are in need of the Lord, below are some of the stuff we have done.
+        </p>
+        <br>
+        <h2
+         align="center">Our community work</h2>
+        <div class="gallery">
+            <a target="_blank" href="Pictures/Pastor Justin and lady from marven.jpg" title="Delievering food to the people of lesotho">
+         <img src="Pictures/Pastor Justin and lady from marven.jpg" alt="Delievering food to the people of lesotho" height="500">
+            </a>
+         <div class="desc">Delievering food to the people of lesotho</div>
+        </div>
+        <div class="gallery">
+            <a target="_blank" href="Pictures/Food on table.jpg" title="Delievering food to the people of lesotho">
+            <img src="Pictures/Food on table.jpg" alt="Delievering food to the people of lesotho" width="500">
+            </a>
+         <div class="desc">Delievering food to the people of lesotho</div>
+        </div>
+        <div class="gallery">
+            <a target="_blank" href="Pictures/Delivery.jpg" title="Delievering food to the people of lesotho">
+            <img src="Pictures/Delivery.jpg" alt="Delievering food to the people of lesotho" width="500">
+            </a>
+            <div class="desc">Delievering food to the people of lesotho</div>
+        </div>
+        <div class="gallery">
+            <a target="_blank" href="Members/Mothers day.jpg" title="Mothers day gifts">
+            <img src="Members/Mothers day.jpg" alt="Mothers day gifts" width="500">
+            </a>
+          <div class="desc">Mothers day gifts</div>            
+        </div>
+        <div class="gallery">
+            <a target="_blank" href="Members/Pastor Justin Preaching.jpg" title="Preaching">
+            <img src="Members/Pastor Justin Preaching.jpg" alt="Preaching" width="500">
+            </a>
+            <div class="desc">Pastor Justin Preaching</div>
+        </div>
+        <br>
+        <h3 style="color: white"
+            align="center">Band Practice</h3>
+        <div align="center">
+        <video autoplay controls width="600">
+            <source src="vid/Praise and Worship practice.mp4" type="video/mp4">
+            <source src="vid/Praise and Worship practice" type="video/ogg">
+            <source src="vid/Praise and Worship practice" type="video/webm">
+            <source src="vid/Praise and Worship practice" type="video/m4a">
+            <source src="vid/Praise and Worship practice" type="video/flv">
+            <source src="vid/Praise and Worship practice" type="video/avi">
+            <source src="vid/Praise and Worship practice" type="video/acc">
+            <source src="vid/Praise and Worship practice" type="video/wmv">
+            this browser does not support HTML5
+        </video> 
+            <div class="desc">Praise and worship practice band practice</div>
+        </div> 
+        </section>
+        <section class="footer">
+            <div align="bottom">
+            <footer style="color: darkslategray">
+            @Copyright Haven To Rest Ministry 2022-All Right Reserved. <a href="References.html" title="reference">References</a>. 
+            <a href="Contact Us.html" title="to keep in touch">Contact us</a>.
+            </footer>
+            </div>
+        </section>
+            <!--Toggle Menu-->
+            <script>
+            var navlink = document.getElementById("navlink");
+            
+            function openMenu(){
+                navlink.style.right = "0";
+            }
+            function exitMenu(){
+                navlink.style.right = "-200px";
+            }
+            </script>
+    </body>
+</html>

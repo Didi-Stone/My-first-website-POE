@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="60">
+        <link rel="stylesheet" href="main.css" type="text/css"/>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+            <a href="index.html"><img src="Pictures/circle logo.png" alt="Church logo" width="120"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>                   
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li>
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+            </nav>
+            <h1 
+            style="color: white"
+            align="center">
+        Get Involved 
+        </h1>
+        </section>
+        <section class="welcome">
+         <form action="" method="POST">
+             <p
+                 align="center">
+               If you want to support us in our endeavours to spread the word of God and the love of Jesus. 
+               Please fill in this form with your details and if want to enquire about anything you may do.
+               Be blessed.
+             </p>
+             <br>
+            <div>
+                <Label for="fullName">Full name:</Label>
+                <Input type="text" id="fullName" name="fullName" placeholder="Full name..." required="">
+            </div>
+            
+            <br>
+            <div>
+                <Label for="email">Email:</Label>
+                <Input type="email" id="email" name="email" placeholder="email adress..." required=""> 
+            </div> 
+            <br>
+            
+            <div>
+                <Label for="tele">Telephone no:</Label>
+                <Input type="tel" id="tele" name="tele" placeholder="telephone number..." required=""> 
+            </div>
+            
+            <br>
+            <div>
+                <label for="details">Get Involved as: </label>
+                
+                <label for="Sponser">Sponser</label>
+                <input type="radio" id="Sponser" name="details" value="Sponser">
+                
+                <label for="Volunteer">Volunteer</label>
+                <input type="radio" id="Volunteer" name="details" value="Volunteer">
+                
+                <label for="Client">Client</label>
+                <input type="radio" id="Client" name="details" value="Client">
+            </div>
+            <br>
+            <div>
+                <Label for="enquiry">Enquiry:</Label>
+                <textarea rows="5" cols="60" name="details">
+                 Enquire here...
+                </textarea>
+            </div>           
+            <div>
+                <input type="reset">
+            </div>
+            <br>
+            <div>
+                <input type="submit">
+            </div>
+        </form>   
+        </section>
+        <section class="footer">
+            <div align="bottom">
+            <footer style="color: darkslategray">
+            @Copyright Haven To Rest Ministry 2022-All Right Reserved. <a href="References.html" title="reference">References</a>. 
+            <a href="Contact Us.html" title="to keep in touch">Contact us</a>.
+            </footer>
+            </div>
+        </section>
+            <!--Toggle Menu-->
+            <script>
+            var navlink = document.getElementById("navlink");
+            
+            function openMenu(){
+                navlink.style.right = "0";
+            }
+            function exitMenu(){
+                navlink.style.right = "-200px";
+            }
+            </script>
+    </body>
+</html>

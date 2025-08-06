@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="60">
+        <link rel="stylesheet" href="main.css" type="text/css"/>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+            <a href="index.html"><img src="Pictures/circle logo.png" alt="Church logo" width="120"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li> 
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+            </nav> 
+            <h1  style="color: white" 
+                    align="center">About Us</h1>
+        </section>
+        <section class="welcome">
+         <div>
+         <p
+         align="center"><big>
+         Based On Acts 2</big>
+        </p>
+        <p 
+        align="center">
+        "To come together in one accord, 
+         To Repent, To receive conviction, 
+         To be baptized, To be devoted to his word, 
+         To have fellowship with one another and 
+         worship god in unity"
+        </p>
+        </div>
+        <br>
+        <p
+        align="center">
+        <big>History</big>
+        <br>
+        Haven To Rest Ministry was founded by Pastor Justin Naidoo and his wife Shelia. 
+        A church where people can recieve the word of God and be renewed in the spirit.
+        </p>
+        <br>
+        <div align="center">
+        <img src="Members/Pastor Justin and his wife Shelia.jpg" title="Pastor Justin and Shelia" width="250">
+        </div>
+        <br>
+        <p
+        align="center">
+        <big>Our Vision</big>
+        <br>
+        Our vision is to embrace, encourage, evangelise, equip, experience and extend.
+        </p>
+        <p
+        align="center">
+        <big>Mission</big>
+        <br>
+        Haven to rest is on a church organisation, which on a mission evangelise to the world and
+        preach the gospel of our lord and saviour Jesus Christ, we accomplish this by embracing people our church
+        Encouraging people to seek God and welcome him into our lives. Equiping people with the word of God so they 
+        persevere through trials and have experience for the other trails down the road. Last but not least we aim 
+        to extend the kingdom of God.
+        </p>
+        <br>
+        <br>
+        <div align="center">
+       <img src="Pictures/Flyer.jpg" alt="Church times and services" align="center" height="700" width="500">
+        </div>
+        </section>
+        <section class="footer">
+            <div align="bottom">
+            <footer style="color: darkslategray">
+            @Copyright Haven To Rest Ministry 2022-All Right Reserved. <a href="References.html" title="reference">References</a>. 
+            <a href="Contact Us.html" title="to keep in touch">Contact us</a>.
+            </footer>
+            </div>
+        </section>
+            <!--Toggle Menu-->
+            <script>
+            var navlink = document.getElementById("navlink");
+            
+            function openMenu(){
+                navlink.style.right = "0";
+            }
+            function exitMenu(){
+                navlink.style.right = "-200px";
+            }
+            </script>
+    </body>
+</html>

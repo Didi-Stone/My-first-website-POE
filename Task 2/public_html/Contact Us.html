@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="60">
+        <link rel="stylesheet" href="main.css" type="text/css"/>
+    </head>
+    <body>
+        <section class="header">
+            <nav>
+            <a href="index.html"><img src="Pictures/circle logo.png" alt="Church logo" width="120"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>                    
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li>
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+            </nav>
+            <h1 style="color: white"
+                align="center">
+                Contact Us</h1>
+        </section>
+        <section class="welcome">
+         <div align="center">
+        <img src="Pictures/side church.jpg" 
+             alt="The Haven To Rest Church at the front" 
+             width="800" align="center">
+        </div>
+        <br>
+        <br>
+        <p><i>Address: 333 Persimmon Street, Malvern East, Johannesburg 2198 Johannesburg, South Africa</i></p>
+        <br>
+        <p><i>Telephone number: 011 615 3979</i></p>
+        <p><i>Cellphone number: 082 651 0806</i></p>
+        <br>
+        <p><i>Email address: <a href="justin.naidoo@haventorest.co.za" 
+                                title="email address"
+                                target="_blank">justin.naidoo@haventorest.co.za</a></i></p>
+        <br>
+        <p><i><a href="https://web.facebook.com/haventorest/?ref=page_internal" 
+                title="Facebook"
+                target="_blank">Facebook account</a></i></p>
+        <br>        
+        <br>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57266.84247080221!2d28.052477560404576!3d-26.2234165077582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9511e00e0feae5%3A0x1a385acba1e492ff!2sHaven%20to%20rest!5e0!3m2!1sen!2sza!4v1660929681690!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  
+        </section>
+        <section class="footer">
+            <div align="bottom">
+            <footer style="color: darkslategray">
+            @Copyright Haven To Rest Ministry 2022-All Right Reserved. <a href="References.html" title="reference">References</a>. 
+            <a href="Contact Us.html" title="to keep in touch">Contact us</a>.
+            </footer>
+            </div>
+        </section>
+            <!--Toggle Menu-->
+            <script>
+            var navlink = document.getElementById("navlink");
+            
+            function openMenu(){
+                navlink.style.right = "0";
+            }
+            function exitMenu(){
+                navlink.style.right = "-200px";
+            }
+            </script>
+    </body>
+</html>
