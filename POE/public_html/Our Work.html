@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="200">
+        <link rel="stylesheet" href="main.css" type="text/css"/>
+        <link rel="icon" type="image/x-icon" href="Pictures/circle logo.png">
+        <style>
+        header{
+          min-height: 85vh;
+        }
+        .wrapper{
+          margin-top: 60px;
+          text-align: center;
+        }
+        .wrapper h2{
+          font-size: 48px;
+          color: lime;
+          margin-bottom: 25px;
+        }
+        .our_team{
+          width: auto;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .our_team .team_member{
+          width: 250px;
+          margin: 5px;
+          background: rgb(122,255,160);
+          background: linear-gradient(180deg, rgba(122,255,160,0) 26%, rgba(0,230,134,0.5690651260504201) 33%, rgba(109,181,142,0.9416141456582633) 63%);
+          padding: 20px 10px;
+        }
+
+        .our_team .team_member .member_img{
+          background: lightgreen;  
+          max-width: 190px;
+          width: 100%;
+          height: 190px;
+          margin: 0 auto;
+          border-radius: 50%;
+          padding: 5px;
+          position: relative;
+          cursor: pointer;
+        }
+
+        .our_team .team_member .member_img img{
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+
+        .our_team .team_member h3{
+          text-transform: uppercase;
+          font-size: 18px;
+          line-height: 18px;
+          letter-spacing: 2px;
+          margin: 15px 0 0px;
+          color: white;
+        }
+
+        .our_team .team_member span{
+          color: white;
+          font-size: 10px;
+        }
+
+        .our_team .team_member p{
+          color: white;
+          margin-top: 20px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+        .row{
+          width: 100%;
+          display: grid;  
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 20px;
+          padding: 0px;
+        }
+        .column {
+            float: left;
+            width: 100.33%;
+            padding: 5px;
+          }
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+            width: 100%;
+          }
+        @media screen and (max-width: 500px) {
+        .column {
+              width: 100%;
+            }
+        .row{
+            display: flex;
+            flex-direction: column;
+        }
+        .flyer{
+            width: 100%;
+        }
+}  
+        @media(max-width: 910px){
+          .row{
+            display: flex;
+            flex-direction: column;
+}
+        </style>
+    </head>
+    <body>
+      <nav>
+            <a href="Home Page.html"><img align="left" src="Transparent Logo.png" alt="Church logo"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>                   
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li>
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+        </nav>
+        <header>
+            <h1 
+          style="color: white"
+          align="center">Our Work</h1>
+        </header>
+    <section>
+<div class="wrapper">
+    <h2>Our Head Team at Haven To Rest</h2>
+    
+    <div class="our_team">
+        <div class="team_member">
+          <div class="member_img">
+             <img src="Ourwork/4.jpg" alt="Pastor Justin">
+          </div>
+          <h3>Pastor Justin</h3>
+          <span>Head Pastor</span>
+          <p>Haven To Rest Ministry was founded by Pastor Justin Naidoo and his wife Shelia. 
+         A church where people can receive the word of God and be renewed in the spirit.</p>
+        </div>
+        <div class="team_member">
+           <div class="member_img">
+             <img src="Ourwork/5.jpg" alt="Theo Colossians Naidoo">
+           </div>
+          <h3>Theo Colossian Naidoo</h3>
+          <span>Leader of Praise and Worship</span>
+          <p>Theo Naidoo is leader of the praise an worship team, he is a devout Musician and Christian.</p>
+      </div>
+        <div class="team_member">
+           <div class="member_img">
+             <img src="Ourwork/2.jpg" alt="Elsie Mokoena">
+             
+          </div>
+          <h3>Elsie Mokoena</h3>
+          <span>Head of the little havens</span>
+          <p>Elsie is is encharge of the Sunday school for the little havens. She is very passionate about preaching the the word of God.
+          She is a very excellent teacher to the little havens</p>
+      </div>
+        <div class="team_member">
+           <div class="member_img">
+             <img src="Ourwork/6.jpg" alt="Devon Naidoo">
+             
+          </div>
+          <h3>Devon Naidoo</h3>
+          <span>Head of the Ushers</span>
+          <p>Devon is incharge of the Ushers and oversees the praise and worship team as well as the Youth</p>
+      </div>
+         <div class="team_member">
+           <div class="member_img">
+             <img src="Ourwork/3.jpg" alt="Caleb Chetty">
+             
+          </div>
+          <h3>Caleb Chetty</h3>
+          <span>The leader of the Youth</span>
+          <p>Caleb Chetty is the leader of the youth, and oversees the activities and the lessons that are being taught</p>
+      </div>
+    </div>
+</div>
+       
+        <h2
+         align="center">Our community work</h2>
+    <p align="center">
+        We at Haven To Rest Ministry are on a mission to spread love and help 
+        <a href="Contact Us.html" target="_self" title="our location" style="color: #00e792">
+        the community our church is in</a>, we accomplish these feats by doing bread runs, food runs
+        and even travelling to Lesotho, to spread the word of God and bless those that
+        are in need of the Lord, below are some of the stuff we have done.</p>
+        <div class="row">
+            <div class="column">
+              <img src="img/img63.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img66.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img67.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img67.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img68.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img69.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img70.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img27.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+            <div class="column">
+              <img src="img/img57.jpg" alt="" style="width:100%; height: 320px">
+            </div>
+        </div>
+        <h2 style="color: black"
+            align="center">Our Schedule</h2>
+        <div align='center' >   
+       <img src="Pictures/Flyer.jpg" alt="Church times and services" align="center" height="700" width="500" class='flyer'>
+       </div>
+</section>
+<footer> 
+    <div class="container">
+        <div class="Sec AboutUs"> 
+            <h2 style="color: white">About Us</h2>
+            <p style="color: white"
+                align="left">
+                Haven To Rest is a church organisation founded by 
+                <a href="About Us.html" title="learn more about the church" style="color: darkslategrey; text-decoration: none;">
+                Pastor Justin Naidoo and his wife Shelia Naidoo.</a> We aim to spread the gospel and provide
+                a place of worship for anyone willing to be saved by our lord and saviour Jesus Christ.
+            </p>
+         <ul class="links">
+            <li><a href="https://www.facebook.com/haventorest/"><img src="facebook.png" alt="Facebook" width="30"></a></li>
+            <li><a href="https://www.twitter.com/"><img src="twitter.png" alt="Twitter" width="30"></a></li>
+            <li><a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram" width="30"></a></li>
+            <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="You Tube" width="30"></a></li>
+         </ul>
+        </div>
+        <div class="Sec quickLinks">
+             <h2 style="color: white;">Quick Links</h2>
+             <ul>
+                 <li><a href="About Us.html" title="About Us">About</a></li>
+                 <li><a href="Contact Us.html" title="Contact Us">Contact</a></li>
+                 <li><a href="Get Involved.html" title="Donate/Help">Donate</a></li>
+                 <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                 <li><a href="#" title="Terms of Use">Terms of use</a></li>
+                 <li><a href="Our Work.html" title="Our Work">Our Work</a></li>
+             </ul>
+             <a href="../../WEDE5010_Task 1_ST10231469_Didi Khotleng/Haven To Rest/public_html/Photo Gallery.html"></a>
+        </div>
+        <div class="Sec Contact">
+            <h2 style="color: white;">Contact Details</h2>
+            <ul class="details">
+              <li>
+                  <span><img src="church-symbol.png" alt="Church" width="30"></span>
+                  <span>333 Persimmon Street, Malvern East Johannesburg 
+                    <br>2198 Johannesburg, South Africa</span>
+              </li>
+              <li>
+                  <span><img src="phone-icon.png" alt="Telephone number" width="30"></span>
+                  <p><a href="+0116153979">011 615 3979</a></p>
+              </li>
+              <li>
+                  <span><img src="mobile-icon.png" alt="Mobile Phone" width="30"></span>
+                  <p><a href="0826510806">082 651 0806</a></p>
+              </li>
+              <li>
+                  <span><img src="email_icon.png" alt="email" width="30"></span>
+                  <p><a href="justin.naidoo@haventorest.co.za">justin.naidoo@haventorest.co.za</a></p>
+              </li>
+            </ul>
+        </div>
+     </div>    
+</footer>
+    <div class="copyright">
+        <p>@Copyright Haven To Rest Ministry 2022-All Right Reserved. <a style="color: white; text-decoration: none;" href="References.html" title="reference">References</a>
+            Authour Didi Khotleng. <a style="color: white; text-decoration: none" href="Contact Us.html" title="to keep in touch">Contact us</a></p>
+    </div>
+            <script src="Navigation Functions.js"></script>
+    </body>
+</html>

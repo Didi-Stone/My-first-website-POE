@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="200">
+        <link rel="stylesheet" href="main.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="Pictures/circle logo.png">
+        <style>
+        header{
+             min-height: 85vh;
+        }
+        .contactus{
+            position: relative;
+            width: 100%;
+            padding: 40px 40px;
+        }
+        .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+        .title h2{
+            color: #00ce57;
+            font-weight: 500;
+        }
+        .contact{
+            height: auto;
+            padding: 4px;
+            background: white;
+            box-shadow: 0 5px 35px rgba(0,0,0,.15);
+        }
+        .contact form{
+            width: 99%;
+            padding: 5px;
+            background: white;
+        }
+        .box {
+            position: relative;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 5fr 4fr;
+            grid-template-areas: "form info" "form map";
+            grid-gap: 20px;
+            margin-top: 20px;
+        }
+        form{
+            grid-area: form;
+            padding: 0;
+            padding-bottom: 0
+        }
+        .info{
+            grid-area: info;
+        }
+        .map{
+            grid-area: map;
+        }
+        .container-form{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        .ContactInfo{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .ContactInfo .box {
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+        }
+
+        .ContactInfo .text p{
+            display: flex;
+            margin-left: 20px;
+            font-size: 16px;
+            color: white;
+            flex-direction: column;
+            font-weight: 300;
+        }
+        .ContactInfo .text h3{
+            font-weight: 500;
+            color: #6db58e;
+        }
+        .contact form{
+            height: 600px;
+        }
+        .contact form h2{
+            font-size: 30px;
+            color: #6db58e;
+            font-weight: 500;
+        }
+        .contact form .inputBox{
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .contact form .inputBox input, 
+        .contact form .inputBox textarea{
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #6db58e;
+            outline: none;
+            resize: none;
+        }
+        .contact form .inputBox span{
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: .5s;
+            color: #777;
+        }
+        .contact form .inputBox input:focus ~ span,
+        .contact form .inputBox textarea:focus ~ span,
+        .contact form .inputBox input:valid ~ span,
+        .contact form .inputBox textarea:valid ~ span,
+        .contact form .inputBox input:hover ~ span,
+        .contact form .inputBox textarea:hover ~ span{
+            color: #00ce57;
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+        .contact form .inputBox input[type="submit"]{
+            width: 100px;
+            background: #00ce57;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 10px;
+        }
+        .info{
+            background: white;
+            border: 2px solid #00ce57;
+        }
+        .info h3{
+          color: #00ce57;  
+        }
+        .icon img{
+            border-radius: 50%;
+            width: 6%;
+        }
+        .icon img:hover{
+            background: #6db58e;
+        }
+        .sci{
+            margin-top: 40px;
+            display: flex;
+        }
+        .sci li{
+            list-style: none;
+            margin-right: 15px;
+        }
+        .sci li a img{
+            background: white;
+            border-radius: 50%;
+        }
+        .sci li a img:hover{
+            background: #00ce57;
+        }
+        .map{
+            padding: 0;
+            height: 100%;
+            border: 2px solid #00ce57;
+        }
+        .map iframe{
+          width:100%;
+          height: 100%;
+        }
+        @media (max-width: 991px){
+            .contactus{
+                padding: 20px;
+            }
+            .box{
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                grid-template-areas: "form" "info" "map";
+            }
+            .map{
+                min-height: 300px;
+            }
+            .contact form{
+                flex-direction: column;
+            }
+            .contact form .ContactInfo{
+                margin-bottom: 40px;
+            }
+            ContactInfo,
+            .contact form{
+                width: 100%;
+            }
+        }   
+        </style>
+    </head>
+    <body>
+      <nav>
+            <a href="Home Page.html"><img align="left" src="Transparent Logo.png" alt="Church logo"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>                   
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li>
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+        </nav>
+        <header>
+            <h1 style="color: white"
+                align="center">
+                Contact Us</h1>
+        </header>
+        <section>
+<div class="contactus">
+            <div class="title">
+                <h2>Get in Touch</h2>
+            </div>
+            <div class="box">
+            <div class="contact form">
+                <form action="https://formsubmit.co/f90e4e70a981fde7d16d80899fc66922" method="POST">
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text"  name="FullName" required="">
+                        <span>Full Name:</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" required="">
+                        <span>Email:</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text"  name="PhoneNumber" required="">
+                        <span>Phone number:</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea rows="6" cols="63" name="message" required=""></textarea>
+                        <span>You can send us a message:</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" value="send">
+                    </div>
+                </form>
+            </div>
+            <div class="contact info">
+                    <h3>Contact info</h3>
+            <div class="ContactInfo">
+            <div>
+                <div class="icon"><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57266.84247080221!2d28.052477560404576!3d-26.2234165077582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9511e00e0feae5%3A0x1a385acba1e492ff!2sHaven%20to%20rest!5e0!3m2!1sen!2sza!4v1660929681690!5m2!1sen!2sza" title="Church Address"><img src="church-symbol.png" alt="Church" width="30"></a></div>
+                <div class="text">
+                    <h3>Address:</h3>
+                    <p style="color: black">333 Persimmon Street, Malvern East Johannesburg 
+                    <br>2198 Johannesburg, South Africa</p>
+                </div>
+            </div> 
+                <div >
+                    <div class="icon"><a href="0116153979" title="Telephone number"><img src="phone-icon.png" alt="Telephone number" width="30"></a></div>
+                    <div class="text">
+                      <h3>Telephone:</h3>  
+                      <p style="color: black">011-615-3979</p> 
+                    </div>
+                </div>
+                <div>
+                    <div class="icon"><a href="0826510806" title="Cell Phone"><img src="mobile-icon.png" alt="Mobile Phone" width="30"></a></div>
+                    <div class="text">
+                      <h3>Cellphone</h3>
+                      <p style="color: black">082 651 0806</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="icon"><a href="justin.naidoo@haventorest.co.za" title="Pastor Justin's Email"><img src="email_icon.png" alt="email" width="30"></a></div>
+                    <div class="text">
+                        <h3>Email:</h3>
+                        <p style="color: black"><a href="justin.naidoo@haventorest.co.za" style="text-decoration: none; color: black;">justin.naidoo@haventorest.co.za</a></p>
+                    </div>
+                </div>
+                <ul class="sci">
+                    <li><a href="https://www.facebook.com/haventorest/"><img src="facebook.png" alt="Facebook" width="20"></a></li>
+                    <li><a href="https://www.twitter.com/"><img src="twitter.png" alt="Twitter" width="20"></a></li>
+                    <li><a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram" width="20"></a></li>
+                    <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="You Tube" width="20"></a></li>
+                </ul>
+                </div>
+                </div> 
+                <div class="contact map">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57266.84247080221!2d28.052477560404576!3d-26.2234165077582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e9511e00e0feae5%3A0x1a385acba1e492ff!2sHaven%20to%20rest!5e0!3m2!1sen!2sza!4v1660929681690!5m2!1sen!2sza" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>     
+                </div>
+            </div>
+        </div>
+        </section>
+<footer> 
+    <div class="container">
+        <div class="Sec AboutUs"> 
+            <h2 style="color: white">About Us</h2>
+            <p style="color: white"
+                align="left">
+                Haven To Rest is a church organisation founded by 
+                <a href="About Us.html" title="learn more about the church" style="color: darkslategrey; text-decoration: none;">
+                Pastor Justin Naidoo and his wife Shelia Naidoo.</a> We aim to spread the gospel and provide
+                a place of worship for anyone willing to be saved by our lord and saviour Jesus Christ.
+            </p>
+         <ul class="links">
+            <li><a href="https://www.facebook.com/haventorest/"><img src="facebook.png" alt="Facebook" width="30"></a></li>
+            <li><a href="https://www.twitter.com/"><img src="twitter.png" alt="Twitter" width="30"></a></li>
+            <li><a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram" width="30"></a></li>
+            <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="You Tube" width="30"></a></li>
+         </ul>
+        </div>
+        
+        <div class="Sec quickLinks">
+             <h2 style="color: white;">Quick Links</h2>
+             <ul>
+                 <li><a href="About Us.html" title="About Us">About</a></li>
+                 <li><a href="Contact Us.html" title="Contact Us">Contact</a></li>
+                 <li><a href="Get Involved.html" title="Donate/Help">Donate</a></li>
+                 <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                 <li><a href="#" title="Terms of Use">Terms of use</a></li>
+                 <li><a href="Our Work.html" title="Our Work">Our Work</a></li>
+             </ul>
+        </div>
+        <div class="Sec Contact">
+            <h2 style="color: white;">Contact Details</h2>
+            <ul class="details">
+              <li>
+                  <span><img src="church-symbol.png" alt="Church" width="30"></span>
+                  <span>333 Persimmon Street, Malvern East Johannesburg 
+                    <br>2198 Johannesburg, South Africa</span>
+              </li>
+              <li>
+                  <span><img src="phone-icon.png" alt="Telephone number" width="30"></span>
+                  <p><a href="+0116153979">011 615 3979</a></p>
+              </li>
+              <li>
+                  <span><img src="mobile-icon.png" alt="Mobile Phone" width="30"></span>
+                  <p><a href="0826510806">082 651 0806</a></p>
+              </li>
+              <li>
+                  <span><img src="email_icon.png" alt="email" width="30"></span>
+                  <p><a href="justin.naidoo@haventorest.co.za">justin.naidoo@haventorest.co.za</a></p>
+              </li>
+            </ul>
+        </div>
+     </div>    
+</footer>
+    <div class="copyright">
+        <p>@Copyright Haven To Rest Ministry 2022-All Right Reserved. <a style="color: white; text-decoration: none;" href="References.html" title="reference">References</a>
+            Authour Didi Khotleng. <a style="color: white; text-decoration: none" href="Contact Us.html" title="to keep in touch">Contact us</a></p>
+    </div>
+            <script src="Navigation Functions.js"></script>
+    </body>
+</html>

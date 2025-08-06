@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="200">
+        <link rel="stylesheet" href="main.css" type="text/css"/>
+        <link rel="icon" type="image/x-icon" href="Pictures/circle logo.png">
+        <style>
+            header{
+                min-height: 85vh;
+            }
+            .Top-content{
+                text-align: center;
+            }
+            .Top-content h2{
+                font-size: 20px;
+                font-weight: 500;
+                color: black;
+            }
+            .Top-content p{
+                font-weight: 300;
+                font-size: 17px;
+                color: black;
+            }
+            .container-about{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .container-about .box{
+                position: relative;
+                width: 350px;
+                padding: 40px;
+                background: white;
+                border: 2px solid lime;
+                box-shadow: 0 5px 15px rgba(0,0,0,.1);
+                border-radius: 4px;
+                margin: 20px;
+                box-sizing: border-box;
+                overflow: hidden;
+                text-align: center;
+            }
+            .container-about .box .icon{
+                position: relative;
+                width: 80px;
+                height: 80px;
+                color: white;
+                background: #000;
+                display: flex;
+                justify-content:center;
+                align-items: center;
+                margin: 0 auto;
+                border-radius: 50%;
+                transition: 1s;
+            }
+            .container-about .box:nth-child(1) .icon{
+                box-shadow: 0 0 0 0 #78d2a5;
+                background: #78d2a5;    
+            }
+            .container-about .box:nth-child(1):hover .icon{
+                box-shadow: 0 0 0 400px #78d2a5;
+            }
+            .container-about .box:nth-child(2) .icon{
+                box-shadow: 0 0 0 0 #78d2a5;
+                background: #78d2a5;    
+            }
+            .container-about .box:nth-child(2):hover .icon{
+                box-shadow: 0 0 0 400px #78d2a5;
+            }
+            .container-about .box:nth-child(3) .icon{
+                box-shadow: 0 0 0 0 #78d2a5;
+                background: #78d2a5;    
+            }
+            .container-about .box:nth-child(3):hover .icon{
+                box-shadow: 0 0 0 400px #78d2a5;
+            }
+            .container-about .box .content{
+                position: inherit;
+                z-index: 1;
+                transition: .5s;
+            }
+            .container-about .box:hover .content{
+                color: white;
+            }
+            .container-about .box .content h3{
+                font-size: 20px;
+                margin: 10px 0;
+                padding: 0;
+            }
+            .container-about .box .content p{
+                margin:0;
+                padding: 0;
+            }
+            .container-about .box:before{
+                content:'';
+                width: 50%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                pointer-events: none;
+            }
+            .list{
+                display: inline-block;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+      <nav>
+            <a href="Home Page.html"><img align="left" src="Transparent Logo.png" alt="Church logo"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>                   
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li>
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+        </nav>
+    <header>
+        <h1  style="color: white" 
+             align="center">About Us</h1>
+    </header>
+    <section>
+         <div class="Top-content">
+        <h2><big>Based On Acts 2</big></h2>
+        <h3>
+        "To come together in one accord, To Repent, To receive conviction, 
+         To be baptized, To be devoted to his word, To have fellowship with one another and 
+         worship god in unity"
+        </h3>
+        </div>
+        <div class="container-about">
+            <div class="box">
+                <div class="icon"><img src="Transparent Logo.png" alt="" width="70"></div>
+                <div class="content">
+                    <h3>History</h3>
+                    <p>Haven To Rest Ministry was founded by Pastor Justin Naidoo and his wife Shelia. 
+                       A church where people can recieve the word of God and be renewed in the spirit.
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><img src="Regulus.png" alt="" width="70"></div>
+                <div class="content">
+                    <h3>Silver Membership</h3>
+                    <p>Perfect for those who prefer independent workouts (Gym Access Only</p>
+                    <ul class="list">
+                        <li>- Full access to gym equipment.</li>
+                        <li>- Strength & cardio training areas.</li>
+                        <li>- Locker room & shower access.</li>
+                     </ul>
+                    <ol>
+                        <li>Month-to-Month: R400/month</li>
+                        <li>12-Month Contract: R350/month</li>
+                        <li>24-Month Contract: R300/month</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="box">
+                <div class="icon"><img src="Transparent Logo.png" alt="" width="70"></div>
+            <div class="content">
+                <h3>Our Mission</h3>
+                <p>Haven to rest is on a church organisation, which on a mission evangelise to the world and
+                    preach the gospel of our lord and saviour Jesus Christ, we accomplish this by embracing people our church
+                    Encouraging people to seek God and welcome him into our lives. Equiping people with the word of God so they 
+                    persevere through trials and have experience for the other trails down the road. Last but not least we aim 
+                    to extend the kingdom of God.</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<footer> 
+    <div class="container">
+        <div class="Sec AboutUs"> 
+            <h2 style="color: white">About Us</h2>
+            <p style="color: white"
+                align="left">
+                Haven To Rest is a church organisation founded by 
+                <a href="About Us.html" title="learn more about the church" style="color: darkslategrey; text-decoration: none;">
+                Pastor Justin Naidoo and his wife Shelia Naidoo.</a> We aim to spread the gospel and provide
+                a place of worship for anyone willing to be saved by our lord and saviour Jesus Christ.
+            </p>
+         <ul class="links">
+            <li><a href="https://www.facebook.com/haventorest/"><img src="facebook.png" alt="Facebook" width="30"></a></li>
+            <li><a href="https://www.twitter.com/"><img src="twitter.png" alt="Twitter" width="30"></a></li>
+            <li><a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram" width="30"></a></li>
+            <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="You Tube" width="30"></a></li>
+         </ul>
+        </div>
+        
+        <div class="Sec quickLinks">
+             <h2 style="color: white;">Quick Links</h2>
+             <ul>
+                 <li><a href="About Us.html" title="About Us">About</a></li>
+                 <li><a href="Contact Us.html" title="Contact Us">Contact</a></li>
+                 <li><a href="Get Involved.html" title="Donate/Help">Donate</a></li>
+                 <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                 <li><a href="#" title="Terms of Use">Terms of use</a></li>
+                 <li><a href="Our Work.html" title="Our Work">Our Work</a></li>
+             </ul>
+        </div>
+        <div class="Sec Contact">
+            <h2 style="color: white;">Contact Details</h2>
+            <ul class="details">
+              <li>
+                  <span><img src="church-symbol.png" alt="Church" width="30"></span>
+                  <span>333 Persimmon Street, Malvern East Johannesburg 
+                    <br>2198 Johannesburg, South Africa</span>
+              </li>
+              <li>
+                  <span><img src="phone-icon.png" alt="Telephone number" width="30"></span>
+                  <p><a href="+0116153979">011 615 3979</a></p>
+              </li>
+              <li>
+                  <span><img src="mobile-icon.png" alt="Mobile Phone" width="30"></span>
+                  <p><a href="0826510806">082 651 0806</a></p>
+              </li>
+              <li>
+                  <span><img src="email_icon.png" alt="email" width="30"></span>
+                  <p><a href="justin.naidoo@haventorest.co.za">justin.naidoo@haventorest.co.za</a></p>
+              </li>
+            </ul>
+        </div>
+     </div>    
+</footer>
+    <div class="copyright">
+        <p>@Copyright Haven To Rest Ministry 2022-All Right Reserved. <a style="color: white; text-decoration: none;" href="References.html" title="reference">References</a>
+            Authour Didi Khotleng. <a style="color: white; text-decoration: none" href="Contact Us.html" title="to keep in touch">Contact us</a></p>
+    </div>
+            <script src="Navigation Functions.js"></script>
+    </body>
+</html>

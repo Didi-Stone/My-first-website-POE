@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Haven To Rest</title>
+        <meta charset="UTF-8">
+        <meta name="description" content="Church website">
+        <meta name="author" content="ST10231469_Didi Khotleng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="200">
+        <link rel="stylesheet" href="main.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="Pictures/circle logo.png">
+        <style>
+           *:focus{
+                outline:none;
+            }
+            input{
+                display: none;
+            }
+            header{
+                min-height: 85vh;
+            }
+            .container-gallery{
+                width: 100%;
+                text-align: center;
+                padding-bottom: 50px;
+            }
+            #photo-header{
+                font-weight: normal;
+                font-size: 35px;
+                position: relative;
+                margin: 40px 0;
+            }
+            #photo-header::before{
+                content: '';
+                position: absolute;
+                width: 100px;
+                height: 3px;
+                background-color: #78d2a5;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                animation: animate 4s linear infinite;
+            }
+            @keyframes animate{
+                0%{
+                    width: 100px;
+                }
+                50%{
+                    width: 200px;
+                }
+                100%{
+                    width: 100px;
+                }
+            }
+            .top-content{
+                background-color:lightgreen;
+                width: 90%;
+                margin: 0 auto 20px auto;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                box-shadow: 3px 3px 5px lightgray;
+            }
+            h3{
+                height: 100%;
+                background-color: #78d2a5;
+                line-height: 60px;
+                padding: 0 50px;
+                color: white;
+            }
+            label{
+                display: inline-block;
+                height: 60%;
+                margin: 0 20px;
+                line-height: 60px;
+                font-size: 18px;
+                color: white;
+                cursor: pointer;
+                transition: color .5s;
+                background-color: lightgreen;
+            }
+            label:hover{
+                color: #074707;
+            }
+            .photo-gallery{
+                width: 90%;
+                margin: auto;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 20px;
+            }
+            .pic{
+                position: relative;
+                height:230px;
+                border-radius: 10px;
+                box-shadow: 3px 3px 5px #78d2a5;
+                cursor: pointer;
+                transition: .5s;
+            }
+            .pic img{
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+            }
+            .pic::before{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                font-size: 22px;
+                font-weight: bold;
+                width: 100%;
+                margin-top: -100px;
+                opacity: 0;
+                transition: .5s;
+                transition-delay: .5s;
+            }
+            .pic:hover::after{
+                height: 100%;
+            }
+            .pic:hover::before{
+                margin-top: 0;
+                opacity: 1;
+            }
+            .table{
+                width: 100%;
+                border-collapse: collapse;
+            }
+            #check1:checked ~ .container-gallery .photo-gallery .pic{
+                opacity: 1;
+                transform: scale(1);
+                position: relative;
+                transition: .5s;
+            }
+            #check2:checked ~ .container-gallery .photo-gallery .family{
+                transform: scale(1);
+                opacity: 1;
+                position: relative;
+            }
+            #check2:checked ~ .container-gallery .photo-gallery .child, 
+            #check2:checked ~ .container-gallery .photo-gallery .place,
+            #check2:checked ~ .container-gallery .photo-gallery .pictures{
+                opacity: 0;
+                transform: scale(0);
+                position: absolute;
+                transition: .0s;
+            }
+            #check3:checked ~ .container-gallery .photo-gallery .child{
+                transform: scale(1);
+                opacity: 1;
+                position: relative;
+            }
+            #check3:checked ~ .container-gallery .photo-gallery .family, 
+            #check3:checked ~ .container-gallery .photo-gallery .place,
+            #check3:checked ~ .container-gallery .photo-gallery .pictures{
+                opacity: 0;
+                transform: scale(0);
+                position: absolute;
+                transition: .0s;
+            }
+            #check4:checked ~ .container-gallery .photo-gallery .place{
+                transform: scale(1);
+                opacity: 1;
+                position: relative;
+            }
+            #check4:checked ~ .container-gallery .photo-gallery .family, 
+            #check4:checked ~ .container-gallery .photo-gallery .child,
+            #check4:checked ~ .container-gallery .photo-gallery .pictures{
+                opacity: 0;
+                transform: scale(0);
+                position: absolute;
+                transition: .0s;
+            }
+            #check5:checked ~ .container-gallery .photo-gallery .pictures{
+                transform: scale(1);
+                opacity: 1;
+                position: relative;
+            }
+            #check5:checked ~ .container-gallery .photo-gallery .family, 
+            #check5:checked ~ .container-gallery .photo-gallery .child,
+            #check5:checked ~ .container-gallery .photo-gallery .place{
+                opacity: 0;
+                transform: scale(0);
+                position: absolute;
+                transition: .0s;
+            }
+            @media(max-width: 600px){
+                .photo-gallery{
+                   margin: 50px;
+                   display: flex;
+                   flex-direction: column;
+                }
+                .pic{
+                   width: 95%;
+                   padding: 0.2rem;
+                }
+                .top-content{
+                    align-items: normal;
+                }
+                .table{
+                    display: block;
+                    width: auto;
+                }
+                table::before{
+                    background-color: lightgreen;
+                }
+                th{
+                    display: block;
+                }
+                th::before{
+                    float: left;
+                    margin-right: 3rem;
+                    font-weight: bold;
+                }
+                .popup.active{
+                    width: 100%;
+                    height: 60vh;
+                }
+                .table th{
+                  background-color: transparent;   
+                }
+            }
+            .popup{
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(0);
+                width: 80%;
+                max-width: 1600px;
+                height: 90vh;
+                max-height: 800px;
+                border-radius: 20px;
+                background: rgba(0,128,0,.4);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                z-index: 5;
+                overflow: hidden;
+                transition: 1s;
+            }
+            .popup.active{
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+            .popup.active .close-btn, .popup.active .image-name,
+            .popup.active .index, .popup.active .large-image,
+            .popup.active .arrow-btn{
+                opacity: 1;
+                transition: opacity .5s;
+                transition-delay: 1s;
+            }
+            .top-bar{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                background: white;
+                color: #78d2a5;
+                text-align: center;
+                line-height: 50px;
+                font-weight: 300;
+            }
+            .close-btn{
+                position: absolute;
+                top: 10px;
+                right: 20px;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .arrow-btn{
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 10px;
+                border-radius: 50%;
+                border: none;
+                background: none;
+                opacity: 0;
+                cursor: pointer;
+            }
+            .arrow-btn:hover{
+                background: white;
+            }
+            .image-name{
+                opacity: 0;
+            }
+            .left{
+                left: 10px;
+                transform: translateY(-50%) rotate(180deg);
+            }
+            .right{
+                right: 10px;
+            }
+            .index{
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                font-size: 80px;
+                font-weight: 100;
+                color: rgba(255,255,255,.4);
+                opacity: 0;
+            }
+            .large-image{
+                margin-top: 5%;
+                width: 80%;
+                height: 80%;
+                object-fit: contain;
+                opacity: 0;
+            }
+            .image {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+      <nav>
+            <a href="Home Page.html"><img align="left" src="Transparent Logo.png" alt="Church logo"></a>
+            <div class="nav-links" id="navlink">
+                <i class="fa" onclick="exitMenu()"><img src="exit.png" alt="exit menu" width="25"></i>
+                <ul>
+                    <li><a href="Home Page.html" title="Home page"><big>Home</big></a></li>
+                    <li><a href="About Us.html" title="About Us"><big>About Us</big></a></li>
+                    <li><a href="Our Work.html" title="Our Work"><big>Our Work</big></a></li>
+                    <li><a href="Photo Gallery.html" title="Photo Gallery"><big>Photo Gallery</big></a></li>                   
+                    <li><a href="Get Involved.html" title="Get Involved"><big>Get Involved</big></a></li>
+                    <li><a href="Contact Us.html" title="Contact Us"><big>Contact Us</big></a></li>
+                </ul>
+            </div>
+            <i class="fa" onclick="openMenu()"><img src="icons8-menu-480.png" alt="Menu" width="25"></i>
+        </nav>
+        <header>
+            <h1 style="color: white"
+            align="center">
+            Photo Gallery
+        </h1>
+        </header>
+        <input type="radio" name="Photos" id="check1" checked>
+        <input type="radio" name="Photos" id="check2" >
+        <input type="radio" name="Photos" id="check3" >
+        <input type="radio" name="Photos" id="check4" >
+        <input type="radio" name="Photos" id="check5" >
+   
+    <div class="container-gallery">
+         <h2 id="photo-header">OUR PHOTO GALLERY</h2>
+         <div class="top-content">
+            <h3>Photo Gallery</h3>
+        <div style="overflow-x: auto;">
+        <table>
+            <thead>
+             <th><label for="check1" title="All photos">All Photos</label></th>
+             <th><label for="check2" title="Church Members">Church members</label></th>
+             <th><label for="check5" title="Church pictures">Church pictures</label></th>
+             <th><label for="check3" title="Community work">Community work</label></th>
+             <th><label for="check4" title="Special events">Special events</label></th>
+            </thead>
+        </table>
+        </div>
+        </div>
+        <div class="popup">
+         <div class="top-bar">
+             <p class="image-name"></p>
+             <i class="close-btn"><img src="x.png" alt="close" width="17"></i>
+         </div>
+            <button class="arrow-btn left"><img src="round-arrow.png" alt="Left" width="70"></button>
+             <button class="arrow-btn right"><img src="round-arrow.png" alt="Right" width="70"></button>
+             <img src="img/img1.jpg" alt="" class="large-image">
+            <h2 class="index">name</h2>
+         </div>
+         <div class="photo-gallery">
+             
+             <div class="pic family">
+                <img src="img/img1.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img2.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img3.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img4.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img5.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img6.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img7.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img8.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img9.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img10.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img11.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img12.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img13.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img14.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img15.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img16.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img17.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img18.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img19.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img20.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img21.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img22.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img23.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img24.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img25.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img26.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img27.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img28.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img29.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img30.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img31.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img32.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img33.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img34.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img35.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img36.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img37.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img38.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img39.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img40.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img41.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img42.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img43.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img44.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img45.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img46.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img47.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img48.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img49.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img50.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img51.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                <img src="img/img52.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic family">
+                 <img src="img/img53.jpg" alt="night stars" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img54.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img55.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img56.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img57.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img58.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img59.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img60.jpg" alt="Food run" width="720" class="image">
+             </div>
+              <div class="pic child">
+                <img src="img/img61.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img62.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img63.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img64.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img65.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img66.jpg" alt="Food run" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img67.jpg" alt="Soup kitchen" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img68.jpg" alt="Community gathering together" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img69.jpg" alt="Children gathered" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img70.jpg" alt="Food serving" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img71.jpg" alt="Exercise with the kids" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img72.jpg" alt="Gathering" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img73.jpg" alt="Bread delievery" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img74.jpg" alt="Bread delievery" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img75.jpg" alt="Bread delievery" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img76.jpg" alt="Unpacking food" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img77.jpg" alt="Members gathering" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img78.jpg" alt="Goods for the kids" width="720" class="image">
+             </div>
+             <div class="pic child">
+                <img src="img/img79.jpg" alt="Goods for the kids" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img80.jpg" alt="front church" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img81.jpg" alt="front church" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img82.jpg" alt="side church" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                 <img src="img/img83.jpg" alt="side church" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                 <img src="img/img84.jpg" alt="side church" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img85.jpg" alt="side church" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img86.jpg" alt="Church Van" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                 <img src="img/img87.jpg" alt="Church Van" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img88.jpg" alt="Church Van" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img89.jpg" alt="Church" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img90.jpg" alt="Church stage" width="720" class="image">
+             </div>
+             <div class="pic pictures">
+                <img src="img/img91.jpg" alt="Church Podium" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img92.jpg" alt="Carols by candlelight" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img93.jpg" alt="Women's day" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img94.jpg" alt="Women's day" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img95.jpg" alt="Women's day" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img96.jpg" alt="Women's day" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img97.jpg" alt="Women's day" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img98.jpg" alt="Camping" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img99.jpg" alt="Camping" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img100.jpg" alt="Women's gathering" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img101.jpg" alt="The food" width="720" class="image">
+             </div>
+             <div class="pic place">
+                 <img src="img/img102.jpg" alt="Single parenting" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img103.jpg" alt="Carols by candlelight" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img104.jpg" alt="the manger set up"  class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img105.jpg" alt="Christmas carols anouncement" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img106.jpg" alt="Christmas Service" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img107.jpg" alt="New years eve service" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img108.jpg" alt="Easter weekend" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img109.jpg" alt="Jesus walk on mount zion with the church youth on 2019" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img110.jpg" alt="Jesus walk on mount zion with the church youth on 2019" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img111.jpg" alt="Jesus walk on mount zion with the church youth on 2019" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img112.jpg" alt="Jesus walk on mount zion with the church youth on 2019" width="720" class="image">
+             </div>
+             <div class="pic place">
+                 <img src="img/img113.jpg" alt="Jesus walk on mount zion with the church youth on 2019" width="720" class="image">
+             </div>
+             <div class="pic place">
+                 <img src="img/img114.jpg" alt="Jesus walk on mount zion with the church youth on 2019" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img115.jpg" alt="Women's day" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img116.jpg" alt="Victory weekend" width="720" class="image">
+             </div>
+             <div class="pic place">
+                 <img src="img/img117.jpg" alt="Victory weekend" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img118.jpg" alt="Vanessa Goosen Announcement" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img119.jpg" alt="Christmas Service" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img120.jpg" alt="New years eve sevice" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img121.jpg" alt="Paster Dave Robertson announcement" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img122.jpg" alt="Victory weekend" width="720" class="image">
+             </div>
+             <div class="pic place">
+                <img src="img/img123.jpg" alt="Peter Tobie announcement" width="720" class="image">
+             </div>
+         </div>
+        </div>
+    <footer> 
+    <div class="container">
+        <div class="Sec AboutUs"> 
+            <h2 style="color: white">About Us</h2>
+            <p style="color: white"
+               align="left">
+                Haven To Rest is a church organisation founded by 
+                <a href="About Us.html" title="learn more about the church" style="color: cornsilk; text-decoration: none;">
+                Pastor Justin Naidoo and his wife Shelia Naidoo.</a> We aim to spread the gospel and provide
+                a place of worship for anyone willing to be saved by our lord and saviour Jesus Christ.
+            </p>
+         <ul class="links">
+            <li><a href="https://www.facebook.com/haventorest/"><img src="facebook.png" alt="Facebook" width="30"></a></li>
+            <li><a href="https://www.twitter.com/"><img src="twitter.png" alt="Twitter" width="30"></a></li>
+            <li><a href="https://www.instagram.com/"><img src="instagram.png" alt="Instagram" width="30"></a></li>
+            <li><a href="https://www.youtube.com/"><img src="youtube.png" alt="You Tube" width="30"></a></li>
+         </ul>
+        </div>
+        
+        <div class="Sec quickLinks">
+             <h2 style="color: white;">Quick Links</h2>
+             <ul>
+                 <li><a href="About Us.html" title="About Us">About</a></li>
+                 <li><a href="Contact Us.html" title="Contact Us">Contact</a></li>
+                 <li><a href="Get Involved.html" title="Donate/Help">Donate</a></li>
+                 <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                 <li><a href="#" title="Terms of Use">Terms of use</a></li>
+                 <li><a href="Our Work.html" title="Our Work">Our Work</a></li>
+             </ul>
+        </div>
+        <div class="Sec Contact">
+            <h2 style="color: white;">Contact Details</h2>
+            <ul class="details">
+              <li>
+                  <span><img src="church-symbol.png" alt="Church" width="30"></span>
+                  <span>333 Persimmon Street, Malvern East Johannesburg 
+                    <br>2198 Johannesburg, South Africa</span>
+              </li>
+              <li>
+                  <span><img src="phone-icon.png" alt="Telephone number" width="30"></span>
+                  <p><a href="+0116153979">011 615 3979</a></p>
+              </li>
+              <li>
+                  <span><img src="mobile-icon.png" alt="Mobile Phone" width="30"></span>
+                  <p><a href="0826510806">082 651 0806</a></p>
+              </li>
+              <li>
+                  <span><img src="email_icon.png" alt="email" width="30"></span>
+                  <p><a href="justin.naidoo@haventorest.co.za">justin.naidoo@haventorest.co.za</a></p>
+              </li>
+            </ul>
+        </div>
+     </div>    
+</footer>
+    <div class="copyright">
+        <p>@Copyright Haven To Rest Ministry 2022-All Right Reserved. <a style="color: white; text-decoration: none;" href="References.html" title="reference">References</a>
+            Authour Didi Khotleng. <a style="color: white; text-decoration: none" href="Contact Us.html" title="to keep in touch">Contact us</a></p>
+    </div>
+        <script src="Photo-gallery.js"></script>
+        <script src="Navigation Functions.js"></script>
+    </body>
+</html>
